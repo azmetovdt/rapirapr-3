@@ -33,9 +33,6 @@ public class TestActor extends AbstractActor {
     private TestResult test(MessageTest messageTest) {
         String status, output = OUTPUT_INITIAL_VALUE;
         try {
-//            System.out.println(messageTest.getJsScript());
-//            System.out.println(messageTest.getFunctionName());
-//            System.out.println(messageTest.getTest().getParams());
             output = execJS(messageTest.getJsScript(), messageTest.getFunctionName(), messageTest.getTest().getParams());
             status = isOutputCorrect(messageTest, output) ? TEST_PASSED_STATUS : TEST_FAILED_STATUS;
         } catch (ScriptException | NoSuchMethodException e) {
