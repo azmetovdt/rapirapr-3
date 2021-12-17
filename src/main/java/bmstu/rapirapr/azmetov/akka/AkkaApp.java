@@ -43,9 +43,13 @@ public class AkkaApp {
 
     private Route createRoute(ActorRef actor) {
 
-        return route(path("result", () -> route(get(() -> parameter("packageId", (id) -> {
-                    return complete("");
-                })))),
+        return route(path("result", () -> route(
+                        get(() -> parameter("packageId",
+                                (id) -> {
+                                    return complete("");
+                                }
+                        ))
+                )),
 
                 path("result", () -> post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
                     System.out.println(order.getFuncName());
