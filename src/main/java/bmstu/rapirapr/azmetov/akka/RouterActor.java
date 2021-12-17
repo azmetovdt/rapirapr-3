@@ -23,6 +23,8 @@ public class RouterActor extends AbstractActor {
                     for (Test test : m.getTests()) {
                         tester.tell(new MessageTest(m, test), saver);
                     }
-                }).build();
+                })
+                .match(String.class, id -> saver.tell(id, sender()))
+                .build();
     }
 }
