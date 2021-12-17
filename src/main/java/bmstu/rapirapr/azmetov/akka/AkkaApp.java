@@ -39,11 +39,6 @@ public class AkkaApp {
                                 get( () ->
                                         )
                         ))
-                get(() ->
-                        pathPrefix("resut", () ->
-                                path(longSegment(), (Long id) -> {
-
-                                }))),
                 post(() ->
                         path("create-order", () ->
                                 entity(Jackson.unmarshaller(Order.class), order -> {
