@@ -19,5 +19,7 @@ public class AkkaApp {
                 Props.create(RouterActor.class)
         );
 
+        http
+
     }  
 }
