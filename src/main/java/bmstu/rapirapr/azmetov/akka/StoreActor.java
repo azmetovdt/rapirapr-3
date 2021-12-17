@@ -28,6 +28,7 @@ public class StoreActor extends AbstractActor {
     }
 
     private List<TestResult> getProgramResults(String id) {
+        System.out.println("getting results of " + id);
         return testResultsMap.get(id);
     }
 }
