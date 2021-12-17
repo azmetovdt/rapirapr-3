@@ -56,15 +56,11 @@ public class AkkaApp {
                                             return complete("");
                                         })
                                         )
-                        ))
-//                post(() ->
-//                        path("create-order", () ->
-//                                entity(Jackson.unmarshaller(Order.class), order -> {
-//                                    CompletionStage<Done> futureSaved = saveOrder(order);
-//                                    return onSuccess(futureSaved, done ->
-//                                            complete("order created")
-//                                    );
-//                                })))
+                        )),
+                post(() ->
+                        parameter("packageId", (id) -> {
+                            return complete("");
+                        }))
         );
     }
 }
