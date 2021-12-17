@@ -47,7 +47,7 @@ public class AkkaApp {
         return route(
                 get(() -> parameter("packageId",
                         id -> {
-                            return complete("frefre");
+                             actor.tell(id, ActorRef.noSender());
                         }
                 )),
                 post(() -> entity(Jackson.unmarshaller(Message.class),
