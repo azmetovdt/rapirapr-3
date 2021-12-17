@@ -8,6 +8,7 @@ import akka.http.javadsl.server.Route;
 
 import static akka.http.javadsl.server.Directives.get;
 import static akka.http.javadsl.server.Directives.pathPrefix;
+import static akka.http.javadsl.server.PathMatchers.longSegment;
 import static akka.stream.impl.Pop.concat;
 
 public class AkkaApp {
@@ -37,11 +38,7 @@ public class AkkaApp {
                 get(() ->
                         pathPrefix("resut", () ->
                                 path(longSegment(), (Long id) -> {
-                                    final CompletionStage<Optional<Item>> futureMaybeItem = fetchItem(id);
-                                    return onSuccess(futureMaybeItem, maybeItem ->
-                                            maybeItem.map(item -> completeOK(item, Jackson.marshaller()))
-                                                    .orElseGet(() -> complete(StatusCodes.NOT_FOUND, "Not Found"))
-                                    );
+
                                 }))),
                 post(() ->
                         path("create-order", () ->
