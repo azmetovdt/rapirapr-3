@@ -50,11 +50,12 @@ public class AkkaApp {
                             return complete("frefre");
                         }
                 )),
-
-
-                post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
-                    System.out.println(order.getFuncName());
-                    return complete(order.getFuncName());
-                })));
+                post(() -> entity(Jackson.unmarshaller(Message.class),
+                        order -> {
+                            System.out.println(order.getFuncName());
+                            return complete(order.getFuncName());
+                        }
+                ))
+        );
     }
 }
