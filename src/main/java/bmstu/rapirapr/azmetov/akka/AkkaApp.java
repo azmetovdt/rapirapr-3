@@ -6,6 +6,8 @@ import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
 
+import static akka.http.javadsl.server.Directives.get;
+import static akka.http.javadsl.server.Directives.pathPrefix;
 import static akka.stream.impl.Pop.concat;
 
 public class AkkaApp {
