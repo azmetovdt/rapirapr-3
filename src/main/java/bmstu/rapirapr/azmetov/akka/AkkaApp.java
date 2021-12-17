@@ -37,7 +37,7 @@ public class AkkaApp {
         Http http = Http.get(system);
 
         CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
-
+        System.out.println('Сервер запущен');
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
