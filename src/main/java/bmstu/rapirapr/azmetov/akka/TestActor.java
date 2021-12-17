@@ -3,6 +3,10 @@ package bmstu.rapirapr.azmetov.akka;
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+
 public class TestActor extends AbstractActor {
 
     @Override
@@ -14,8 +18,7 @@ public class TestActor extends AbstractActor {
     }
 
     public execJS() {
-        ScriptEngine engine = new
-                ScriptEngineManager().getEngineByName("nashorn");
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(jscript);
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(functionName, params).toString();
