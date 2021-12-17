@@ -44,4 +44,18 @@ public class Message {
     public List<Test> getTests() {
         return this.tests;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "PACKAGE_ID_ALIAS='" + PACKAGE_ID_ALIAS + '\'' +
+                ", JS_SCRIPT_ALIAS='" + JS_SCRIPT_ALIAS + '\'' +
+                ", FUNCTION_NAME_ALIAS='" + FUNCTION_NAME_ALIAS + '\'' +
+                ", TESTS_ALIAS='" + TESTS_ALIAS + '\'' +
+                ", packageId='" + packageId + '\'' +
+                ", jsScript='" + jsScript + '\'' +
+                ", functionName='" + functionName + '\'' +
+                ", tests=" + tests +
+                '}';
+    }
 }

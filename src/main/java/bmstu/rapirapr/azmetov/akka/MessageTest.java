@@ -31,8 +31,8 @@ public class MessageTest {
     @Override
     public String toString() {
         return "MessageTest{" +
-                "message=" + message.toString() +
-                ", test=" + test.toString() +
+                "message=" + message.toString() + '\n' +
+                ", test=" + test.toString() + '\n' +
                 '}';
     }
 }
