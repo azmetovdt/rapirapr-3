@@ -11,6 +11,7 @@ import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
@@ -49,7 +50,7 @@ public class AkkaApp {
         return route(
                 get(() -> parameter("packageId",
                         id -> {
-                            Future<List<TestResult>> result = Patterns.ask(actor, id)
+                            Future<List<TestResult>> result = Patterns.ask(actor, id, 5000);
                             return actor.tell(id, self());
                         }
                 )),
