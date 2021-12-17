@@ -41,6 +41,9 @@ public class AkkaApp {
                 ConnectHttp.toHost("localhost", 8080),
                 materializer
         );
+
+        binding.thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> system.terminate())
     }
 
     private Route createRoute(ActorRef actor) {
