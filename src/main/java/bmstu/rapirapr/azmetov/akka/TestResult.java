@@ -1,18 +1,16 @@
 package bmstu.rapirapr.azmetov.akka;
 
 public class TestResult {
-    private final String packageId;
+    private final MessageTest messageTest;
     private final String jsScript;
     private final String functionName;
     private final Test test;
 
     public TestResult(
-            String packageId,
-            String jsScript,
-            String funcName,
-            Test test
+            MessageTest messageTest,
+
     ) {
-        this.packageId = packageId;
+        this.MessageTest = messageTest;
         this.jsScript = jsScript;
         this.functionName = funcName;
         this.test = test;
