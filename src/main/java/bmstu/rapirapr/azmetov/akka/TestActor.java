@@ -14,17 +14,18 @@ public class TestActor extends AbstractActor {
     private static final String TEST_PASSED_STATUS = "PASSED";
     private static final String TEST_FAILED_STATUS = "FAILED";
     private static final String EXECUTION_FAILED_STATUS = "PASSED";
+    private static final String ENGINE_NAME = "nashorn";
     private static final String OUTPUT_INITIAL_VALUE = "";
 
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(MessageTest.class, m -> sender().tell(test(m), self()))
+                .match(MessageTest.class, messageTest -> sender().tell(test(messageTest), self()))
                 .build();
     }
 
     public String execJS(String jscript, String functionName, List<Integer> params) throws ScriptException, NoSuchMethodException {
-        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
         engine.eval(jscript);
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(functionName, params.toArray()).toString();

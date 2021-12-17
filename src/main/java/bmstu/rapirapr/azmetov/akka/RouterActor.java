@@ -15,13 +15,12 @@ public class RouterActor extends AbstractActor {
         tester = getContext().actorOf(Props.create(TestActor.class));
     }
 
-
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(Message.class, m -> {
-                    for (Test test : m.getTests()) {
-                        tester.tell(new MessageTest(m, test), saver);
+                .match(Message.class, message -> {
+                    for (Test test : message.getTests()) {
+                        tester.tell(new MessageTest(message, test), saver);
                     }
                 })
                 .match(String.class, id -> saver.tell(id, sender()))
