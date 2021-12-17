@@ -38,7 +38,7 @@ public class AkkaApp {
                         route(
                                 get( () ->
                                         parameter("packageId", (id) -> {
-                                            return complete();
+                                            return complete("");
                                         })
                                         )
                         ))
