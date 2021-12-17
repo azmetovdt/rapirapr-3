@@ -14,9 +14,9 @@ public class AkkaApp {
 
         ActorSystem system = ActorSystem.create(ACTOR_SYSTEM_NAME);
 
-        Props props1 = Props.create(StoreActor.class);
+        Props props1 = Props.create(RouterActor.class);
         ActorRef actor = system.actorOf(
-                Props.create(StoreActor.class)
+                Props.create(RouterActor.class)
         );
 
     }  
