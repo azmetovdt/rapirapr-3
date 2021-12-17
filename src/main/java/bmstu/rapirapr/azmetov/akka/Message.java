@@ -15,7 +15,7 @@ public class Message {
     public Message(
             @JsonProperty("packageId") String packageId,
             @JsonProperty("jsScript") String jsScript,
-            @JsonProperty("funcName") String funcName,
+            @JsonProperty("functionName") String funcName,
             @JsonProperty("tests") List<String> tests
             ) {
         this.packageId = packageId;
