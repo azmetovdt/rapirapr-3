@@ -27,6 +27,8 @@ public class AkkaApp {
 
         Http http = Http.get(system);
 
+        actorMaterializer = 
+
     }
 
     private Route createRoute() {
