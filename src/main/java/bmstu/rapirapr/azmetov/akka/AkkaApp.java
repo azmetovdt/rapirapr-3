@@ -16,7 +16,6 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import scala.concurrent.Future;
 
-import java.util.List;
 import java.util.concurrent.CompletionStage;
 
 import static akka.http.javadsl.server.Directives.*;
@@ -51,8 +50,7 @@ public class AkkaApp {
                 get(() -> parameter("packageId",
                         id -> {
                             Future<Object> result = Patterns.ask(actor, id, 5000);
-
-                            return completeOKWithFuture(result, Jackson.marshaller())
+                            return completeOKWithFuture(result, Jackson.marshaller());
                         }
                 )),
                 post(() -> entity(Jackson.unmarshaller(Message.class),
