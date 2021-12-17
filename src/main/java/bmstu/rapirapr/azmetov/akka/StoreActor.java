@@ -20,7 +20,7 @@ public class StoreActor extends AbstractActor {
 
     private saveResults(String id, TestResult result) {
         if(!testResultsMap.containsKey(id)) {
-            testResultsMap.put(id)
+            testResultsMap.put(id, new List<TestResult>())
         }
         testResultsMap.get(id).add(result);
     }
