@@ -8,7 +8,7 @@ public class TestActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(String.class, m -> {
+                .match(Message.class, m -> {
                     System.out.println("receive message! "+m.toString());
                 }).build();
     }
