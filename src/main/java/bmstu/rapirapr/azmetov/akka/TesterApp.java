@@ -25,11 +25,10 @@ public class TesterApp {
     public static final Integer HTTP_PORT = 8080;
     public static final String HTTP_HOST = "localhost";
     public static final String SERVER_STARTED_MESSAGE = "Сервер запущен";
-    public static final String PACKAGE_ID_PARAMETER_ALIAS = "packageId";
     public static final String TESTING_STARTED_RESPONSE = "Тестирование запущено";
+    public static final String PACKAGE_ID_PARAMETER_ALIAS = "packageId";
 
     public static void main(String[] args) throws Exception {
-
         ActorSystem system = ActorSystem.create(ACTOR_SYSTEM_NAME);
         ActorRef actor = system.actorOf(Props.create(RouterActor.class));
         ActorMaterializer materializer = ActorMaterializer.create(system);
