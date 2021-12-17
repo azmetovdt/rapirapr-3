@@ -1,1 +1,1 @@
-public class Store
+public class StoreActor extends 
