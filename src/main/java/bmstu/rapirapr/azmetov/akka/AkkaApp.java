@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
+import akka.stream.ActorMaterializer;
 
 import static akka.http.javadsl.server.Directives.*;
 
@@ -23,11 +24,14 @@ public class AkkaApp {
                 Props.create(RouterActor.class)
         );
 
+        ActorMaterializer materializer = ActorMaterializer.create(system);
+
+        Flow<>
+
         AkkaApp app = new AkkaApp();
 
         Http http = Http.get(system);
 
-        actorMaterializer = 
 
     }
 
