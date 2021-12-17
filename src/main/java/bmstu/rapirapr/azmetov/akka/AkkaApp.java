@@ -6,6 +6,8 @@ import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
 
+import static akka.stream.impl.Pop.concat;
+
 public class AkkaApp {
     public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
     public static void main(String[] args) throws Exception {
