@@ -8,7 +8,7 @@ import java.util.List;
 public class Test {
     private final String testName;
     private final String expectedResult;
-    private final List<String> params;
+    private final List<Integer> params;
 
     @JsonCreator
     public Test(
