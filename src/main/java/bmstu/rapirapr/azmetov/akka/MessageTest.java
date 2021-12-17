@@ -1,2 +1,4 @@
-package bmstu.rapirapr.azmetov.akka;public class MessageTest {
+package bmstu.rapirapr.azmetov.akka;
+
+public class MessageTest {
 }
