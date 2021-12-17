@@ -49,7 +49,7 @@ public class AkkaApp {
         return route(
                 get(() -> parameter("packageId",
                         id -> {
-                            Future<List<TestResult>>
+                            Future<List<TestResult>> result = 
                             return actor.tell(id, self());
                         }
                 )),
