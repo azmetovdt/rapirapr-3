@@ -49,7 +49,7 @@ public class AkkaApp {
         return route(
                 get(() -> parameter("packageId",
                         id -> {
-                            Future<List<TestResult>> result = 
+                            Future<List<TestResult>> result = Patterns.ask()
                             return actor.tell(id, self());
                         }
                 )),
