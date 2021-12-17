@@ -27,7 +27,7 @@ public class TestActor extends AbstractActor {
 
     private test(MessageTest test) {
         try {
-            result = execJS()
+            result = execJS(test.getJsScript(), test.getFunctionName(), test.get)
         }
     }
 }
