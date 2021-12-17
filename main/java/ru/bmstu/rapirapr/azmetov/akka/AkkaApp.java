@@ -7,6 +7,10 @@ public class AkkaApp {
             System.err.println(USAGE_ERROR_TEXT);
             System.exit(-1);
         }
-        ActorSystem system = ActorSystem.create("akkaActorSystem")
+        ActorSystem system = ActorSystem.create("akkaActorSystem");
+        ActorRef actor = system.actorOf(
+                Props.create(StoreActor.class)
+        );
+        
     }
 }
