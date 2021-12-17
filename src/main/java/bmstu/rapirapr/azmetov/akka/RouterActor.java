@@ -7,9 +7,11 @@ import akka.japi.pf.ReceiveBuilder;
 
 public class RouterActor extends AbstractActor {
 
+    private final ActorRef router;
     private final ActorRef tester;
 
     public RouterActor() {
+        router = getContext().actorOf(Props.create(RouterActor.class));
         tester = getContext().actorOf(Props.create(TestActor.class));
     }
 
