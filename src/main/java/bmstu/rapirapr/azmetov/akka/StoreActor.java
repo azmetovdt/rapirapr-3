@@ -19,6 +19,7 @@ public class StoreActor extends AbstractActor {
     }
 
     private saveResults(String id, TestResult result) {
-        testResultsMap.put()
+        if
+        testResultsMap.get(id).add(result);
     }
 }
