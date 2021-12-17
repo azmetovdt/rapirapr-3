@@ -52,7 +52,7 @@ public class AkkaApp {
                         id -> {
                             Future<Object> result = Patterns.ask(actor, id, 5000);
 
-                            return completeOKWithFuture(result)
+                            return completeOKWithFuture(result, Jackson.marshaller())
                         }
                 )),
                 post(() -> entity(Jackson.unmarshaller(Message.class),
