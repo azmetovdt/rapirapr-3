@@ -30,7 +30,7 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private test(MessageTest test) {
+    private TestResult test(MessageTest test) {
         String result;
         try {
             result = execJS(test.getJsScript(), test.getFunctionName(), test.getTest().getParams());
