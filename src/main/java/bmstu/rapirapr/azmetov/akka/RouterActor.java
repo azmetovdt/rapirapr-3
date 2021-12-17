@@ -5,7 +5,7 @@ import akka.japi.pf.ReceiveBuilder;
 
 public class RouterActor extends AbstractActor {
 
-    private fi
+    private final
     public RouterActor() {
 
     }
