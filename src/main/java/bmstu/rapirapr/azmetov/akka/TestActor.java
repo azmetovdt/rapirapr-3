@@ -9,7 +9,7 @@ public class TestActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(MessageTest.class, m -> {
-                    System.out.println("receive message! "+m.toString());
+                    System.out.println("receive message! " + m.toString());
                 }).build();
     }
 
