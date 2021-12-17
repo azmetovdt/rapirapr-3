@@ -54,7 +54,7 @@ public class AkkaApp {
 
                 post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
                     System.out.println(order.getFuncName());
-                    return complete("");
+                    return complete(order.getFuncName());
                 })));
     }
 }
