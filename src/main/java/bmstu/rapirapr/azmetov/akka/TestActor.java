@@ -25,5 +25,7 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private test()
+    private test(MessageTest) {
+        
+    }
 }
