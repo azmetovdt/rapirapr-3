@@ -7,11 +7,11 @@ import akka.japi.pf.ReceiveBuilder;
 
 public class RouterActor extends AbstractActor {
 
-    private final ActorRef router;
+    private final ActorRef saver;
     private final ActorRef tester;
 
     public RouterActor() {
-        router = getContext().actorOf(Props.create(RouterActor.class));
+        saver = getContext().actorOf(Props.create(StoreActor.class));
         tester = getContext().actorOf(Props.create(TestActor.class));
     }
 
@@ -21,7 +21,7 @@ public class RouterActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(Message.class, m -> {
                     for (Test test : m.getTests()) {
-                        tester.tell(new MessageTest(m, test), sender());
+                        tester.tell(new MessageTest(m, test), saver);
                     }
                 }).build();
     }
