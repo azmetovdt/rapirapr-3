@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="16898567-90bd-40fd-b0dc-597390d2caf8" name="Changes" comment="" />
+    <list default="true" id="16898567-90bd-40fd-b0dc-597390d2caf8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/rapirapr/azmetov/akka/StoreActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/rapirapr/azmetov/akka/StoreActor.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +20,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="22PlpmihdkCr8JFKcgHFXyEgDT4" />
   <component name="ProjectLevelVcsManager">
@@ -31,6 +43,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
@@ -56,7 +69,7 @@
       <updated>1639747287204</updated>
       <workItem from="1639747288471" duration="467000" />
       <workItem from="1639747764936" duration="934000" />
-      <workItem from="1639748744795" duration="333000" />
+      <workItem from="1639748744795" duration="625000" />
     </task>
     <servers />
   </component>
