@@ -20,6 +20,7 @@ public class AkkaApp {
                 Props.create(RouterActor.class)
         );
 
+        AkkaApp 
         Http http = Http.get(system);
 
     }  
