@@ -31,7 +31,7 @@ public class TestActor extends AbstractActor {
     }
 
     private TestResult test(MessageTest messageTest) {
-        System.out.println('ok');
+        System.out.println("ok");
         String status, output = OUTPUT_INITIAL_VALUE;
         try {
             output = execJS(messageTest.getJsScript(), messageTest.getFunctionName(), messageTest.getTest().getParams());
