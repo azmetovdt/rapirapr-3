@@ -49,10 +49,10 @@ public class AkkaApp {
                                 (id) -> {
                                     return complete("");
                                 }
-                        ))
-                ),
+                        )),
 
-                 () -> post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
+
+                  post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
                     System.out.println(order.getFuncName());
                     return complete("");
                 })));
