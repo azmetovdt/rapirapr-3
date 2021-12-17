@@ -32,7 +32,7 @@ public class AkkaApp {
 
         AkkaApp app = new AkkaApp();
 
-        Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = app.createRoute(actor).flow(system, materializer)
+        Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = app.createRoute(actor).flow(system, materializer);
 
 
         Http http = Http.get(system);
@@ -40,7 +40,7 @@ public class AkkaApp {
 
     }
 
-    private Route createRoute() {
+    private Route createRoute(ActorRef actor) {
 
         return route(
                 path("result", () ->
