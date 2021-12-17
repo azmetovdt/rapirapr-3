@@ -51,7 +51,6 @@ public class Message {
                 "packageId='" + packageId + '\'' +
                 ", jsScript='" + jsScript + '\'' +
                 ", functionName='" + functionName + '\'' +
-                ", tests=" + tests +
                 '}';
     }
 }
