@@ -12,4 +12,8 @@ public class TestActor extends AbstractActor {
                     System.out.println("receive message! "+m.toString());
                 }).build();
     }
+
+    public execJS() {
+        
+    }
 }
