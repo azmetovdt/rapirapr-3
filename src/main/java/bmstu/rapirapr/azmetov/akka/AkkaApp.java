@@ -35,7 +35,7 @@ public class AkkaApp {
 
         return concat(
                 get(() ->
-                        pathPrefix("item", () ->
+                        pathPrefix("resut", () ->
                                 path(longSegment(), (Long id) -> {
                                     final CompletionStage<Optional<Item>> futureMaybeItem = fetchItem(id);
                                     return onSuccess(futureMaybeItem, maybeItem ->
