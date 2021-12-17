@@ -11,6 +11,6 @@ public class AkkaApp {
         ActorRef actor = system.actorOf(
                 Props.create(StoreActor.class)
         );
-        
+
     }
 }
