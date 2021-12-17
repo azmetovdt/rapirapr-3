@@ -37,6 +37,7 @@ public class AkkaApp {
                 path("result", () ->
                         route(
                                 get( () ->
+                                        parameter()
                                         )
                         ))
                 post(() ->
