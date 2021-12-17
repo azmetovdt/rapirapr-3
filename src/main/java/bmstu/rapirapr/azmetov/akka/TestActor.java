@@ -34,7 +34,7 @@ public class TestActor extends AbstractActor {
         String result;
         try {
             result = execJS(test.getJsScript(), test.getFunctionName(), test.getTest().getParams());
-        } catch (e) {
+        } catch (ScriptException | NoSuchMethodException e) {
             
         }
     }
