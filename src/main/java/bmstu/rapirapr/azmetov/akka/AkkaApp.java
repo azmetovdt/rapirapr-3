@@ -15,7 +15,6 @@ import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
-import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 
@@ -50,7 +49,7 @@ public class AkkaApp {
         return route(
                 get(() -> parameter("packageId",
                         id -> {
-                            Future<Object> result = .ask(actor, id, 5000);
+                            Future<Object> result = Patterns.ask(actor, id, 5000);
                             return completeOKWithFuture(result)
                         }
                 )),
