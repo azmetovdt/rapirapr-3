@@ -31,14 +31,14 @@ public class TestActor extends AbstractActor {
         return invocable.invokeFunction(functionName, params).toString();
     }
 
-    private TestResult test(MessageTest test) {
+    private TestResult test(MessageTest messageTest) {
         String status, output = OUTPUT_INITIAL_VALUE;
         try {
-            output = execJS(test.getJsScript(), test.getFunctionName(), test.getTest().getParams());
-            status = test.getTest().getExpectedResult() == output ? TEST_PASSED_STATUS : TEST_FAILED_STATUS;
+            output = execJS(messageTest.getJsScript(), messageTest.getFunctionName(), messageTest.getTest().getParams());
+            status = messageTest.getTest().getExpectedResult() == output ? TEST_PASSED_STATUS : TEST_FAILED_STATUS;
         } catch (ScriptException | NoSuchMethodException e) {
             status = EXECUTION_FAILED_STATUS;
         }
-        return new TestResult(test, status, output);
+        return new TestResult(messageTest, status, output);
     }
 }
