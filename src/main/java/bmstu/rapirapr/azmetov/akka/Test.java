@@ -9,7 +9,7 @@ public class Test {
     private final String testName;
     private final String expectedResult;
     private final String funcName;
-    private final List<String> tests;
+    private final List<String> params;
 
     @JsonCreator
     public Test(
