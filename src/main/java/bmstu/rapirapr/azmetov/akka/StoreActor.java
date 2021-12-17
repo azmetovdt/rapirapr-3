@@ -3,6 +3,7 @@ package bmstu.rapirapr.azmetov.akka;
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,9 +19,9 @@ public class StoreActor extends AbstractActor {
                 }).build();
     }
 
-    private saveResults(String id, TestResult result) {
+    private void saveResults(String id, TestResult result) {
         if(!testResultsMap.containsKey(id)) {
-            testResultsMap.put(id, new List<TestResult>())
+            testResultsMap.put(id, new ArrayList<TestResult>());
         }
         testResultsMap.get(id).add(result);
     }
