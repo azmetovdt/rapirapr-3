@@ -7,7 +7,9 @@ import java.util.List;
 
 public class Test {
 
+    private final TEST_NAME_ALIAS = "testName";
     
+
     private final String testName;
     private final String expectedResult;
     private final List<Integer> params;
