@@ -10,6 +10,7 @@ public class Message {
     private final String funcName;
     private final List<String> tests;
 
+    @Json
     public Message(
             @JsonProperty("packageId") String packageId,
             @JsonProperty("jsScript") String jsScript,
