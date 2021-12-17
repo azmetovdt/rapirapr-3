@@ -41,4 +41,8 @@ public class TestActor extends AbstractActor {
         }
         return new TestResult(messageTest, status, output);
     }
+
+    private static boolean validateOutput(MessageTest messageTest, String output) {
+        return messageTest.getTest().getExpectedResult().equals(output);
+    }
 }
