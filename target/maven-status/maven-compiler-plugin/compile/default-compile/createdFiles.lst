@@ -1,6 +1,7 @@
 bmstu/rapirapr/azmetov/akka/Test.class
-bmstu/rapirapr/azmetov/akka/AkkaApp.class
 bmstu/rapirapr/azmetov/akka/TestActor.class
 bmstu/rapirapr/azmetov/akka/StoreActor.class
 bmstu/rapirapr/azmetov/akka/Message.class
+bmstu/rapirapr/azmetov/akka/MessageTest.class
 bmstu/rapirapr/azmetov/akka/RouterActor.class
+bmstu/rapirapr/azmetov/akka/AkkaApp.class
