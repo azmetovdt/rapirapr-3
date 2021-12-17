@@ -53,7 +53,7 @@ public class AkkaApp {
                 post(() -> entity(Jackson.unmarshaller(Message.class),
                         order -> {
                             actor.tell(order, ActorRef.noSender());
-                            return complete(order.getFunctionName());
+                            return complete("Тестирование запущено");
                         }
                 ))
         );
