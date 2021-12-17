@@ -8,8 +8,9 @@ public class AkkaApp {
             System.exit(-1);
         }
 
-        Props props1 = Props.create(StoreActor.class);
         ActorSystem system = ActorSystem.create("akkaActorSystem");
+
+        Props props1 = Props.create(StoreActor.class);
         ActorRef actor = system.actorOf(
                 Props.create(StoreActor.class)
         );
