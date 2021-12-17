@@ -39,4 +39,12 @@ public class Test {
         return this.params;
     }
 
+    @Override
+    public String toString() {
+        return "Test{" +
+                "testName='" + testName + '\'' +
+                ", expectedResult='" + expectedResult + '\'' +
+                ", params=" + params +
+                '}';
+    }
 }
