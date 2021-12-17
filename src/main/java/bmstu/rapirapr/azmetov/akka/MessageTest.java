@@ -27,4 +27,12 @@ public class MessageTest {
     public Test getTest() {
         return this.test;
     }
+
+    @Override
+    public String toString() {
+        return "MessageTest{" +
+                "message=" + message +
+                ", test=" + test +
+                '}';
+    }
 }
