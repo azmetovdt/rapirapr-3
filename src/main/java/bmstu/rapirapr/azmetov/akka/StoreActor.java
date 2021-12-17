@@ -16,7 +16,7 @@ public class StoreActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestResult.class, m -> saveResults(m.getMessageTest().getPackageId(), m))
-                .match(String.class, this::getProgramResults)
+                .match(String.class, id -> sender().tell(getProgramResults(id), self()))
                 .build();
     }
 
