@@ -1,4 +1,4 @@
-package ru.bmstu.rapirapr.azmetov.akka;
+package azmetov.akka;
 
 public class AkkaApp {
 
