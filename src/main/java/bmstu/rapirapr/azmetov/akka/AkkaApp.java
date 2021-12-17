@@ -51,7 +51,7 @@ public class AkkaApp {
                 get(() -> parameter("packageId",
                         id -> {
                             Future<List<TestResult>> result = (Future<List<TestResult>>) Patterns.ask(actor, id, 5000);
-                            return actor.tell(id, self());
+                            return completeOKWithFuture()
                         }
                 )),
                 post(() -> entity(Jackson.unmarshaller(Message.class),
