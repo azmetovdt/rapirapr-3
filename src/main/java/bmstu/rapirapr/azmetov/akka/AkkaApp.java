@@ -20,10 +20,6 @@ import static akka.http.javadsl.server.Directives.*;
 public class AkkaApp {
     public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
     public static void main(String[] args) throws Exception {
-//        if (args.length != 3) {
-//            System.err.println(USAGE_ERROR_TEXT);
-//            System.exit(-1);
-//        }
 
         ActorSystem system = ActorSystem.create(ACTOR_SYSTEM_NAME);
 
@@ -45,10 +41,6 @@ public class AkkaApp {
                 ConnectHttp.toHost("localhost", 8080),
                 materializer
         );
-
-
-
-
     }
 
     private Route createRoute(ActorRef actor) {
