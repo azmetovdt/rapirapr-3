@@ -9,7 +9,7 @@ public class StoreActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(String.class, m -> {
-                    
+                    System.out.println("receive message! "+m.toString());
                 });
     }
 }
