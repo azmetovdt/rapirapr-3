@@ -57,10 +57,13 @@ public class AkkaApp {
                                         })
                                         )
                         )),
-                post(() ->
-                        parameter("packageId", (id) -> {
-                            return complete("");
-                        }))
+
+                path("result", () ->
+                        post(() ->
+                            entity( (id) -> {
+                                return complete("");
+                            }))
+                )
         );
     }
 }
