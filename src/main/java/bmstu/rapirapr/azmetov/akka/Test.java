@@ -7,8 +7,9 @@ import java.util.List;
 
 public class Test {
 
-    private final TEST_NAME_ALIAS = "testName";
-    
+    private final String TEST_NAME_ALIAS = "testName";
+    private final String EXPECTED_RESULT_ALIAS = "expectedResult";
+    private final String PARAMS_ALIAS = "params";
 
     private final String testName;
     private final String expectedResult;
@@ -16,9 +17,9 @@ public class Test {
 
     @JsonCreator
     public Test(
-            @JsonProperty("testName") String testName,
-            @JsonProperty("expectedResult") String expectedResult,
-            @JsonProperty("params") List<Integer> params
+            @JsonProperty(TEST_NAME_ALIAS) String testName,
+            @JsonProperty(EXPECTED_RESULT_ALIAS) String expectedResult,
+            @JsonProperty(PARAMS_ALIAS) List<Integer> params
     ) {
         this.testName = testName;
         this.expectedResult = expectedResult;
