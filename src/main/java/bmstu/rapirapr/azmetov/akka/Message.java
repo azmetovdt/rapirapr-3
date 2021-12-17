@@ -44,5 +44,4 @@ public class Message {
     public List<Test> getTests() {
         return this.tests;
     }
-
 }
