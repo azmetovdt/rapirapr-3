@@ -6,10 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class Message {
-    private static final String PACKAGE_ID_ALIAS = "packageId";
-    private static final String JS_SCRIPT_ALIAS = "jsScript";
-    private static  String FUNCTION_NAME_ALIAS = "functionName";
-    private static final String TESTS_ALIAS = "tests";
+    private final String PACKAGE_ID_ALIAS = "packageId";
+    private final String JS_SCRIPT_ALIAS = "jsScript";
+    private final String FUNCTION_NAME_ALIAS = "functionName";
+    private final String TESTS_ALIAS = "tests";
 
     private final String packageId;
     private final String jsScript;
