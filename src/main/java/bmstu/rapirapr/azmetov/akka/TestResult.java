@@ -1,12 +1,12 @@
 package bmstu.rapirapr.azmetov.akka;
 
-public class MessageTest {
+public class TestResult {
     private final String packageId;
     private final String jsScript;
     private final String functionName;
     private final Test test;
 
-    public MessageTest(
+    public TestResult(
             String packageId,
             String jsScript,
             String funcName,
@@ -18,7 +18,7 @@ public class MessageTest {
         this.test = test;
     }
 
-    public MessageTest(
+    public TestResult(
             Message message,
             Test test
     ) {
