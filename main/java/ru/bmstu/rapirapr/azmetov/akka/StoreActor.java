@@ -1,1 +1,3 @@
-public class StoreActor extends 
+public class StoreActor extends AbstractActor {
+
+}
