@@ -37,7 +37,7 @@ public class AkkaApp {
                 path("result", () ->
                         route(
                                 get( () ->
-                                        parameter()
+                                        parameter("packageId", (id) -> )
                                         )
                         ))
                 post(() ->
