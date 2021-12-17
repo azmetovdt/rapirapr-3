@@ -47,14 +47,12 @@ public class AkkaApp {
     private Route createRoute(ActorRef actor) {
 
         return route(
-                get(() -> parameter("packageId",
-                        id -> {
+                get(() -> parameter("packageId", id -> {
                             Future<Object> result = Patterns.ask(actor, id, 5000);
                             return completeOKWithFuture(result, Jackson.marshaller());
                         }
                 )),
-                post(() -> entity(Jackson.unmarshaller(Message.class),
-                        order -> {
+                post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
                             actor.tell(order, ActorRef.noSender());
                             return complete("Тестирование запущено");
                         }
