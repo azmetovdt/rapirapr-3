@@ -7,8 +7,6 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
 
 import static akka.http.javadsl.server.Directives.*;
-import static akka.http.javadsl.server.PathMatchers.longSegment;
-import static akka.stream.impl.Pop.concat;
 
 public class AkkaApp {
     public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
@@ -42,14 +40,14 @@ public class AkkaApp {
                                         })
                                         )
                         ))
-                post(() ->
-                        path("create-order", () ->
-                                entity(Jackson.unmarshaller(Order.class), order -> {
-                                    CompletionStage<Done> futureSaved = saveOrder(order);
-                                    return onSuccess(futureSaved, done ->
-                                            complete("order created")
-                                    );
-                                })))
+//                post(() ->
+//                        path("create-order", () ->
+//                                entity(Jackson.unmarshaller(Order.class), order -> {
+//                                    CompletionStage<Done> futureSaved = saveOrder(order);
+//                                    return onSuccess(futureSaved, done ->
+//                                            complete("order created")
+//                                    );
+//                                })))
         );
     }
 }
