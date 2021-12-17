@@ -1,5 +1,6 @@
 package bmstu.rapirapr.azmetov.akka;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public class Message {
     private final String funcName;
     private final List<String> tests;
 
-    @Json
+    @JsonCreator
     public Message(
             @JsonProperty("packageId") String packageId,
             @JsonProperty("jsScript") String jsScript,
