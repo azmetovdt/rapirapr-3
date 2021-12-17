@@ -19,7 +19,7 @@ public class RouterActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(Message.class, m -> {
                     for (Test test : m.getTests()) {
-                        tester.tell(new MessageTest(m.getPackageId(), m.getFunctionName()));
+                        tester.tell(new MessageTest(m, test),);
                     }
                 }).build();
     }

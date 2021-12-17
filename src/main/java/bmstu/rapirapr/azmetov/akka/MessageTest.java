@@ -18,6 +18,16 @@ public class MessageTest {
         this.test = test;
     }
 
+    public MessageTest(
+            Message message,
+            Test test
+    ) {
+        this.packageId = message.getPackageId();
+        this.jsScript = message.getJsScript();
+        this.functionName = message.getFunctionName();
+        this.test = test;
+    }
+
     public String getPackageId() {
         return this.packageId;
     }
