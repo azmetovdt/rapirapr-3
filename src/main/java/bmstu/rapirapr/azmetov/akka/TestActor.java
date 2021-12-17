@@ -11,7 +11,10 @@ import java.util.List;
 
 public class TestActor extends AbstractActor {
 
-    private static final TEST_PASSED_STATUS = 'PASSED'
+    private static final String TEST_PASSED_STATUS = "PASSED";
+    private static final String TEST_FAILED_STATUS = "FAILED";
+    private static final String EXECUTION_FAILED_STATUS = "PASSED";
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
