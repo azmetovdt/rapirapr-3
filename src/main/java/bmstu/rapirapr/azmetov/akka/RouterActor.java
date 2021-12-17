@@ -1,11 +1,12 @@
 package bmstu.rapirapr.azmetov.akka;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 public class RouterActor extends AbstractActor {
 
-    private final
+    private final ActorRef
     public RouterActor() {
 
     }
