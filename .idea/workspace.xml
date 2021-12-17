@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16898567-90bd-40fd-b0dc-597390d2caf8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/rapirapr/azmetov/akka/StoreActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/rapirapr/azmetov/akka/StoreActor.java" afterDir="false" />
-    </list>
+    <list default="true" id="16898567-90bd-40fd-b0dc-597390d2caf8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +77,7 @@
       <updated>1639747287204</updated>
       <workItem from="1639747288471" duration="467000" />
       <workItem from="1639747764936" duration="934000" />
-      <workItem from="1639748744795" duration="12933000" />
+      <workItem from="1639748744795" duration="13249000" />
     </task>
     <servers />
   </component>
