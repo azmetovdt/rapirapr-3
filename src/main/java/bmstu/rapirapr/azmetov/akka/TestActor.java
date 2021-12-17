@@ -31,9 +31,10 @@ public class TestActor extends AbstractActor {
     }
 
     private TestResult test(MessageTest test) {
-        String status;
+        String status, result;
         try {
             status = execJS(test.getJsScript(), test.getFunctionName(), test.getTest().getParams());
+            result = test.getTest().getExpectedResult() == 
         } catch (ScriptException | NoSuchMethodException e) {
             status = EXECUTION_FAILED_STATUS;
         }
