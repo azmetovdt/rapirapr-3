@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.server.Route;
 
 public class AkkaApp {
     public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
@@ -24,5 +25,28 @@ public class AkkaApp {
 
         Http http = Http.get(system);
 
-    }  
+    }
+
+    private Route createRoute() {
+
+        return concat(
+                get(() ->
+                        pathPrefix("item", () ->
+                                path(longSegment(), (Long id) -> {
+                                    final CompletionStage<Optional<Item>> futureMaybeItem = fetchItem(id);
+                                    return onSuccess(futureMaybeItem, maybeItem ->
+                                            maybeItem.map(item -> completeOK(item, Jackson.marshaller()))
+                                                    .orElseGet(() -> complete(StatusCodes.NOT_FOUND, "Not Found"))
+                                    );
+                                }))),
+                post(() ->
+                        path("create-order", () ->
+                                entity(Jackson.unmarshaller(Order.class), order -> {
+                                    CompletionStage<Done> futureSaved = saveOrder(order);
+                                    return onSuccess(futureSaved, done ->
+                                            complete("order created")
+                                    );
+                                })))
+        );
+    }
 }
