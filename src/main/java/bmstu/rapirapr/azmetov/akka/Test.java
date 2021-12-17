@@ -14,29 +14,24 @@ public class Test {
     public Test(
             @JsonProperty("testName") String testName,
             @JsonProperty("expectedResult") String expectedResult,
-            @JsonProperty("functionName") String funcName,
-            @JsonProperty("tests") List<String> tests
-            ) {
-        this.packageId = packageId;
-        this.jsScript = jsScript;
-        this.funcName = funcName;
-        this.tests = tests;
+            @JsonProperty("params") List<Integer> params
+    ) {
+        this.testName = testName;
+        this.expectedResult = expectedResult;
+        this.params = params;
     }
 
-    public String getPackageId() {
-        return this.packageId;
+
+    public String getTestName() {
+        return this.testName;
     }
 
-    public String getJsScript() {
-        return this.jsScript;
+    public String getExpectedResult() {
+        return this.expectedResult;
     }
 
-    public String getFuncName() {
-        return this.funcName;
-    }
-
-    public List<String> getTests() {
-        return this.tests;
+    public List<Integer> getTests() {
+        return this.params;
     }
 
 }
