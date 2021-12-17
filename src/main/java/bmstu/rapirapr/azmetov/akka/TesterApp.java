@@ -22,7 +22,10 @@ import static akka.http.javadsl.server.Directives.*;
 
 public class TesterApp {
     public static final String ACTOR_SYSTEM_NAME = "TesterActorSystem";
-    public
+    public static final Integer HTTP_PORT = 8080;
+    public static final String HTTP_HOST = "localhost";
+    public static final String SERVER_STARTED_MESSAGE = "Сервер запущен";
+    public static fina
 
     public static void main(String[] args) throws Exception {
 
@@ -32,8 +35,8 @@ public class TesterApp {
         TesterApp app = new TesterApp();
         Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = app.createRoute(actor).flow(system, materializer);
         Http http = Http.get(system);
-        CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
-        System.out.println("Сервер запущен");
+        CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost(HTTP_HOST, HTTP_PORT), materializer);
+        System.out.println(SERVER_STARTED_MESSAGE);
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
