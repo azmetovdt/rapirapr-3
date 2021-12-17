@@ -1,5 +1,8 @@
 package bmstu.rapirapr.azmetov.akka;
+
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 
 public class AkkaApp {
     public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
