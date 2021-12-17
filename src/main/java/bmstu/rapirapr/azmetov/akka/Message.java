@@ -48,7 +48,10 @@ public class Message {
     @Override
     public String toString() {
         return "Message{" +
-                "PACKAGE_ID_ALIAS='" + PACKAGE_ID_ALIAS + '\'' +
+                "packageId='" + packageId + '\'' +
+                ", jsScript='" + jsScript + '\'' +
+                ", functionName='" + functionName + '\'' +
+                ", tests=" + tests +
                 '}';
     }
 }
