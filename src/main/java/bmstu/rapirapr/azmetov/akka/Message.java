@@ -22,7 +22,7 @@ public class Message {
             @JsonProperty(JS_SCRIPT_ALIAS) String jsScript,
             @JsonProperty(FUNCTION_NAME_ALIAS) String funcName,
             @JsonProperty(TESTS_ALIAS) List<Test> tests
-            ) {
+    ) {
         this.packageId = packageId;
         this.jsScript = jsScript;
         this.functionName = funcName;
