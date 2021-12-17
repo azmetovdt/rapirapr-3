@@ -50,7 +50,7 @@ public class AkkaApp {
         return route(
                 get(() -> parameter("packageId",
                         id -> {
-                            Future<List<TestResult>> result = (Future<List<TestResult>>) Patterns.ask(actor, id, 5000);
+                            Future<Object> result = .ask(actor, id, 5000);
                             return completeOKWithFuture(result)
                         }
                 )),
