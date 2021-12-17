@@ -20,24 +20,18 @@ import java.util.concurrent.CompletionStage;
 
 import static akka.http.javadsl.server.Directives.*;
 
-public class AkkaApp {
-    public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
+public class TesterApp {
+    public static final String ACTOR_SYSTEM_NAME = "TesterActorSystem";
+    public
 
     public static void main(String[] args) throws Exception {
 
         ActorSystem system = ActorSystem.create(ACTOR_SYSTEM_NAME);
-
-        Props props1 = Props.create(RouterActor.class);
         ActorRef actor = system.actorOf(Props.create(RouterActor.class));
-
         ActorMaterializer materializer = ActorMaterializer.create(system);
-
-        AkkaApp app = new AkkaApp();
-
+        TesterApp app = new TesterApp();
         Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = app.createRoute(actor).flow(system, materializer);
-
         Http http = Http.get(system);
-
         CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
         System.out.println("Сервер запущен");
         System.in.read();
@@ -45,18 +39,15 @@ public class AkkaApp {
     }
 
     private Route createRoute(ActorRef actor) {
-
         return route(
                 get(() -> parameter("packageId", id -> {
-                            Future<Object> result = Patterns.ask(actor, id, 5000);
-                            return completeOKWithFuture(result, Jackson.marshaller());
-                        }
-                )),
+                    Future<Object> result = Patterns.ask(actor, id, 5000);
+                    return completeOKWithFuture(result, Jackson.marshaller());
+                })),
                 post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
-                            actor.tell(order, ActorRef.noSender());
-                            return complete("Тестирование запущено");
-                        }
-                ))
+                    actor.tell(order, ActorRef.noSender());
+                    return complete("Тестирование запущено");
+                }))
         );
     }
 }
