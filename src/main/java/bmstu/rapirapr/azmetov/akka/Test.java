@@ -35,7 +35,7 @@ public class Test {
         return this.expectedResult;
     }
 
-    public List<Integer> getTests() {
+    public List<Integer> getParams() {
         return this.params;
     }
 
