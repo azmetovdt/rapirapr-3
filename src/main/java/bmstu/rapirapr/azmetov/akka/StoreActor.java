@@ -12,4 +12,6 @@ public class StoreActor extends AbstractActor {
                     System.out.println("receive message! "+m.toString());
                 }).build();
     }
+
+    private save
 }
