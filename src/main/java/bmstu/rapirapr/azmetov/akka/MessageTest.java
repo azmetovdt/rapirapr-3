@@ -1,22 +1,21 @@
 package bmstu.rapirapr.azmetov.akka;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
-
 public class MessageTest {
     private final String packageId;
     private final String jsScript;
     private final String functionName;
-    private final List<Test> tests;
+    private final Test test;
 
-    @JsonCreator
-    public MessageTest() {
+    public MessageTest(
+            String packageId,
+            String jsScript,
+            String funcName,
+            Test test
+    ) {
         this.packageId = packageId;
         this.jsScript = jsScript;
         this.functionName = funcName;
-        this.tests = tests;
+        this.test = test;
     }
 
     public String getPackageId() {
@@ -31,7 +30,7 @@ public class MessageTest {
         return this.functionName;
     }
 
-    public List<Test> getTests() {
-        return this.tests;
+    public Test getTest() {
+        return this.test;
     }
 }
