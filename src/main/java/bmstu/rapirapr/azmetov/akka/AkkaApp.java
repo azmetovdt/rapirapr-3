@@ -14,7 +14,9 @@ import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import java.util.List;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.Future;
 
 import static akka.http.javadsl.server.Directives.*;
 
@@ -47,7 +49,7 @@ public class AkkaApp {
         return route(
                 get(() -> parameter("packageId",
                         id -> {
-                    Future<>
+                            Future<List<TestResult>>
                             return actor.tell(id, self());
                         }
                 )),
