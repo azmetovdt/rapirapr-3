@@ -26,7 +26,7 @@ public class TestResult {
     @Override
     public String toString() {
         return "TestResult{" +
-                "messageTest=" + this.messageTest +
+                "messageTest=" + this.messageTest.toString() +
                 ", status='" + this.status + '\'' +
                 ", output='" + this.output + '\'' +
                 '}';
