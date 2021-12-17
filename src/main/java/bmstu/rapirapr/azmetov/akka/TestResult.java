@@ -5,11 +5,7 @@ public class TestResult {
     private final String status;
     private final String output;
 
-    public TestResult(
-            MessageTest messageTest,
-            String status,
-            String output
-            ) {
+    public TestResult(MessageTest messageTest, String status, String output) {
         this.messageTest = messageTest;
         this.status = status;
         this.output = output;
@@ -30,9 +26,9 @@ public class TestResult {
     @Override
     public String toString() {
         return "TestResult{" +
-                "messageTest=" + messageTest +
-                ", status='" + status + '\'' +
-                ", output='" + output + '\'' +
+                "messageTest=" + this.messageTest +
+                ", status='" + this.status + '\'' +
+                ", output='" + this.output + '\'' +
                 '}';
     }
 }
