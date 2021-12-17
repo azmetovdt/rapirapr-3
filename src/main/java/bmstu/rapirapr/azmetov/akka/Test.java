@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class Test {
-    private final String packageId;
-    private final String jsScript;
+    private final String testName;
+    private final String expectedResult;
     private final String funcName;
     private final List<String> tests;
 
