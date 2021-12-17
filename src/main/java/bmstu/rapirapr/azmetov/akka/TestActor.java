@@ -19,9 +19,8 @@ public class TestActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(MessageTest.class, m ->
-                        sender().tell()
-                ).build();
+                .match(MessageTest.class, m -> sender().tell(test(m), self()))
+                .build();
     }
 
     public String execJS(String jscript, String functionName, List<Integer> params) throws ScriptException, NoSuchMethodException {
