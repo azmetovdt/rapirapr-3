@@ -7,6 +7,6 @@ public class AkkaApp {
             System.err.println(USAGE_ERROR_TEXT);
             System.exit(-1);
         }
-
+        ActorSystem system = ActorSystem.create("akkaActorSystem")
     }
 }
