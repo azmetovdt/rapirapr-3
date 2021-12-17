@@ -35,14 +35,14 @@ public class TestActor extends AbstractActor {
         String status, output = OUTPUT_INITIAL_VALUE;
         try {
             output = execJS(messageTest.getJsScript(), messageTest.getFunctionName(), messageTest.getTest().getParams());
-            status = validateOutput(messageTest, output) ? TEST_PASSED_STATUS : TEST_FAILED_STATUS;
+            status = isOutputCorrect(messageTest, output) ? TEST_PASSED_STATUS : TEST_FAILED_STATUS;
         } catch (ScriptException | NoSuchMethodException e) {
             status = EXECUTION_FAILED_STATUS;
         }
         return new TestResult(messageTest, status, output);
     }
 
-    private static boolean validateOutput(MessageTest messageTest, String output) {
+    private static boolean isOutputCorrect(MessageTest messageTest, String output) {
         return messageTest.getTest().getExpectedResult().equals(output);
     }
 }
