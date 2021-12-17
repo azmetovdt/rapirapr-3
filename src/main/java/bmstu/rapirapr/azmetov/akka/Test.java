@@ -8,13 +8,12 @@ import java.util.List;
 public class Test {
     private final String testName;
     private final String expectedResult;
-    private final String funcName;
     private final List<String> params;
 
     @JsonCreator
     public Test(
-            @JsonProperty("packageId") String packageId,
-            @JsonProperty("jsScript") String jsScript,
+            @JsonProperty("testName") String testName,
+            @JsonProperty("expectedResult") String expectedResult,
             @JsonProperty("functionName") String funcName,
             @JsonProperty("tests") List<String> tests
             ) {
