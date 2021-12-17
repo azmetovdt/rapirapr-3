@@ -25,7 +25,8 @@ public class TesterApp {
     public static final Integer HTTP_PORT = 8080;
     public static final String HTTP_HOST = "localhost";
     public static final String SERVER_STARTED_MESSAGE = "Сервер запущен";
-    public static fina
+    public static final String PACKAGE_ID_PARAMETER_ALIAS = "packageId";
+    public static final String TESTING_STARTED_RESPONSE = "Тестирование запущено";
 
     public static void main(String[] args) throws Exception {
 
@@ -43,13 +44,13 @@ public class TesterApp {
 
     private Route createRoute(ActorRef actor) {
         return route(
-                get(() -> parameter("packageId", id -> {
+                get(() -> parameter(PACKAGE_ID_PARAMETER_ALIAS, id -> {
                     Future<Object> result = Patterns.ask(actor, id, 5000);
                     return completeOKWithFuture(result, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
                     actor.tell(order, ActorRef.noSender());
-                    return complete("Тестирование запущено");
+                    return complete(TESTING_STARTED_RESPONSE);
                 }))
         );
     }
