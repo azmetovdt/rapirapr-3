@@ -2,43 +2,29 @@ package bmstu.rapirapr.azmetov.akka;
 
 public class TestResult {
     private final MessageTest messageTest;
-    private final String jsScript;
-    private final String functionName;
-    private final Test test;
+    private final String status;
+    private final String output;
 
     public TestResult(
             MessageTest messageTest,
-
-    ) {
-        this.MessageTest = messageTest;
-        this.jsScript = jsScript;
-        this.functionName = funcName;
-        this.test = test;
+            String status,
+            String output
+            ) {
+        this.messageTest = messageTest;
+        this.status = status;
+        this.output = output;
     }
 
-    public TestResult(
-            Message message,
-            Test test
-    ) {
-        this.packageId = message.getPackageId();
-        this.jsScript = message.getJsScript();
-        this.functionName = message.getFunctionName();
-        this.test = test;
+    public MessageTest getMessageTest() {
+        return this.messageTest;
     }
 
-    public String getPackageId() {
-        return this.packageId;
+    public String getStatus() {
+        return this.status;
     }
 
-    public String getJsScript() {
-        return this.jsScript;
+    public String getOutput() {
+        return this.output;
     }
 
-    public String getFunctionName() {
-        return this.functionName;
-    }
-
-    public Test getTest() {
-        return this.test;
-    }
 }
