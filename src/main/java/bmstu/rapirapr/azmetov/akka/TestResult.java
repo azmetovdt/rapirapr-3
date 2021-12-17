@@ -27,6 +27,12 @@ public class TestResult {
         return this.output;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "TestResult{" +
+                "messageTest=" + messageTest +
+                ", status='" + status + '\'' +
+                ", output='" + output + '\'' +
+                '}';
+    }
 }
