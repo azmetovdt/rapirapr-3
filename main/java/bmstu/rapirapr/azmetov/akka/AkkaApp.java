@@ -1,6 +1,6 @@
 package bmstu.rapirapr.azmetov.akka;
 import akka.actor.ActorSystem;
-S
+
 public class AkkaApp {
     public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
     public static void main(String[] args) throws Exception {
