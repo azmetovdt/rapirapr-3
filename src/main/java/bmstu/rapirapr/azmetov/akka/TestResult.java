@@ -12,7 +12,7 @@ public class TestResult {
     }
 
     public MessageTest getMessageTest() {
-        return this.messageTest;
+        return messageTest;
     }
 
     public String getStatus() {
