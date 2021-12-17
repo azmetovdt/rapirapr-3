@@ -20,14 +20,13 @@ import static akka.http.javadsl.server.Directives.*;
 
 public class AkkaApp {
     public static final String ACTOR_SYSTEM_NAME = "AkkaActorSystem";
+
     public static void main(String[] args) throws Exception {
 
         ActorSystem system = ActorSystem.create(ACTOR_SYSTEM_NAME);
 
         Props props1 = Props.create(RouterActor.class);
-        ActorRef actor = system.actorOf(
-                Props.create(RouterActor.class)
-        );
+        ActorRef actor = system.actorOf(Props.create(RouterActor.class));
 
         ActorMaterializer materializer = ActorMaterializer.create(system);
 
@@ -37,35 +36,20 @@ public class AkkaApp {
 
         Http http = Http.get(system);
 
-        CompletionStage<ServerBinding> binding = http.bindAndHandle(
-                routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
-                materializer
-        );
+        CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
 
-        binding.thenCompose(ServerBinding::unbind)
-                .thenAccept(unbound -> system.terminate());
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
 
     private Route createRoute(ActorRef actor) {
 
-        return route(
-                path("result", () ->
-                        route(
-                                get( () ->
-                                        parameter("packageId", (id) -> {
-                                            return complete("");
-                                        })
-                                        )
-                        )),
+        return route(path("result", () -> route(get(() -> parameter("packageId", (id) -> {
+                    return complete("");
+                })))),
 
-                path("result", () ->
-                        post(() ->
-                            entity(Jackson.unmarshaller(Message.class), order -> {
-                                System.out.println(order.getFuncName());
-                                return  complete("");
-                            }))
-                )
-        );
+                path("result", () -> post(() -> entity(Jackson.unmarshaller(Message.class), order -> {
+                    System.out.println(order.getFuncName());
+                    return complete("");
+                }))));
     }
 }
