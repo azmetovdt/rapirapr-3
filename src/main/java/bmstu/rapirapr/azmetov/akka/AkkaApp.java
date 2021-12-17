@@ -7,6 +7,7 @@ import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.Route;
@@ -60,7 +61,7 @@ public class AkkaApp {
 
                 path("result", () ->
                         post(() ->
-                            entity( (id) -> {
+                            entity(Jackson.unmarshaller(Message.class), order -> {
                                 return complete("");
                             }))
                 )
