@@ -6,8 +6,7 @@ import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
 
-import static akka.http.javadsl.server.Directives.get;
-import static akka.http.javadsl.server.Directives.pathPrefix;
+import static akka.http.javadsl.server.Directives.*;
 import static akka.http.javadsl.server.PathMatchers.longSegment;
 import static akka.stream.impl.Pop.concat;
 
@@ -34,7 +33,7 @@ public class AkkaApp {
 
     private Route createRoute() {
 
-        return concat(
+        return route(
                 get(() ->
                         pathPrefix("resut", () ->
                                 path(longSegment(), (Long id) -> {
