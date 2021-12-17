@@ -35,7 +35,10 @@ public class AkkaApp {
 
         return route(
                 path("result", () ->
-                        route())
+                        route(
+                                get( () ->
+                                        )
+                        ))
                 get(() ->
                         pathPrefix("resut", () ->
                                 path(longSegment(), (Long id) -> {
