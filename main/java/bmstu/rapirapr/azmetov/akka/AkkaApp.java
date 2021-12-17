@@ -1,4 +1,5 @@
 package bmstu.rapirapr.azmetov.akka;
+import akka.actor.ActorSystem;
 
 public class AkkaApp {
 
