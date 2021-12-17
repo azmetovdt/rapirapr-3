@@ -17,5 +17,5 @@ public class AkkaApp {
                 Props.create(StoreActor.class)
         );
 
-    }
+    }  
 }
